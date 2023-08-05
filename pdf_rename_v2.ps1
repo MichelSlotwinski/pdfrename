@@ -1,4 +1,7 @@
-﻿$rootpath = 'g:\My Drive\Dokumente\'
+﻿<#
+cool jetzt habe ich das ding auf github
+#>
+$rootpath = 'g:\My Drive\Dokumente\'
 $pdfstorenamepath = 'g:\My Drive\From_BrotherDevice\'
 
 $existpdfs = Get-ChildItem -Recurse -filter "*.pdf" -LiteralPath $rootpath
