@@ -139,7 +139,8 @@ foreach ($existpdf in $pdfstoname)
                     $Column = 4
                     $worksheet.Cells.Item($row,$column)= $keyword.naming
                     $column = 6
-                    $newfilename = '=SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(B'+$row+'&"_"&LOWER(C'+$row+')&"_"&LOWER(D'+$row+')&"_"&LOWER(E'+$row+')&".pdf","ü","ue"),"ö","oe"),"ä","ae")," ","-")'
+#                    $newfilename = '=SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(B'+$row+'&"_"&LOWER(C'+$row+')&"_"&LOWER(D'+$row+')&"_"&LOWER(E'+$row+')&".pdf","ü","ue"),"ö","oe"),"ä","ae")," ","-")'
+                    $newfilename = '=SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(B'+$row+'&"_"&LOWER(C'+$row+')&"_"&LOWER(D'+$row+')&"_"&LOWER(E'+$row+'),"ü","ue"),"ö","oe"),"ä","ae")," ","-"),":",""),".",""),"--","-")&".pdf"'
                     $worksheet.Cells.Item($row,$column)= $newfilename
                     $column = 7
                     $psrename = '="Get-Item -LiteralPath '''+$pdfstorenamepath+'"&A'+$row+'&"'' | Rename-Item -NewName ''"&F'+$row+'&"''"'
